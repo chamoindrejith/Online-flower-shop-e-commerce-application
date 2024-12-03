@@ -1,4 +1,4 @@
-export default function Cart() {
+export default function Cart({cart,total}) {
     
     return (
         <div className="table-container">
@@ -12,11 +12,19 @@ export default function Cart() {
 
                 </thead>
                 {
-                    
+                 cart.map((item,index)=>{
+                    return(
+                        <tr key = {index}>
+                            <td>{item.product}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.price}</td>
+                        </tr>
+                    )
+                 })   
                 }
                 <tr>
                     <td >Grand Total : </td>
-                    <td colSpan={2}>Grand Total</td>
+                    <td colSpan={2}>{total}</td>
                 </tr>
             </table>
            

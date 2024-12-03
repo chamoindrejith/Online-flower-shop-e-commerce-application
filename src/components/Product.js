@@ -1,7 +1,9 @@
 import '../assets/CSS/layout.css';
 import { useState } from 'react';
+
 export default function Product({key,product,setCart,setTotal}){
     const [quantity, setQuantity] = useState(0);
+    
     const addToCart = () =>{
         if(quantity > 0){
             setCart((prev)=>[
